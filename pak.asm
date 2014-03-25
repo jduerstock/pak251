@@ -4342,6 +4342,7 @@ loc_1c9e7:
 
 	segment seg006
 
+sub_1e780:
 	push	bp
 	mov	bp,sp
 	mov	ax,0xa
@@ -4474,8 +4475,9 @@ loc_1eb6c:
 	ja	short loc_1eb9e
 	db	0x8b,0xd8	; mov	bx,ax
 	shl	bx,1
-	jmp	word [cs:bx+0x40c]
-	; db	0x2e,0xff,0xa7,0x0c,0x04
+	jmp	word [cs:bx+0x040c] ; jmp	word [cs:bx+off_1eb8c]
+
+off_1eb8c:
 	db	0x79,0x04
 	db	0xb5,0x04
 	db	0x67,0x05
