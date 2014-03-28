@@ -10363,7 +10363,7 @@ loc_1eed7:
 loc_1f0a5:
 	cmp	word [bp-0x2a],byte +0x0
 	jl	loc_1f0ae
-	db	0xe9,0x10,0xfb
+	jmp	loc_1ebbe
 
 loc_1f0ae:
 	db	0x8b,0x46
