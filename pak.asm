@@ -11634,6 +11634,8 @@ loc_1fd02:
 	call	word sub_1fab3
 	call	word sub_1face
 	mov	word [bx-0x5a31],0x0
+
+loc_1fd20:
 	inc	si
 	cmp	si,0x2037
 	jc	loc_1fd29
@@ -11709,7 +11711,8 @@ loc_1fda9:
 
 loc_1fdb2:
 	mov	[bx-0x5a31],si
-	db	0x8b,0xf2,0xe9,0x65,0xff
+	db	0x8b,0xf2 ; mov si,dx
+	jmp	word loc_1fd20
 
 loc_1fdbb:
 	db	0x8b,0xc8,0xb0,0x90,0x8a
