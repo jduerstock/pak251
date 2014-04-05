@@ -2888,7 +2888,7 @@ PROGRAM:
 	push	di
 	mov	ax, 0x4f
 	push	ax
-	db	0x9a,0x44,0x06,0x9a,0x14	; call @$basg$qm6Stringt14Byte
+	call	word 0x149a:0x644 ; call @$basg$qm6Stringt14Byte
 	cmp	[bp+8], byte 0
 	jz	loc_131fe
 	les	di, [bp+0x10]
