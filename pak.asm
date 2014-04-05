@@ -3516,7 +3516,7 @@ sub_1385f:
 	call	word 0x1383:0x7cc
 	push	dx
 	push	ax
-	db	0x8d,0x7e,0xd2
+	lea	di,[bp-0x2e]
 	push	ss
 	push	di
 	call	word 0x896:0x2dd2
