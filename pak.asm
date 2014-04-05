@@ -2582,6 +2582,7 @@ loc_126ac:
 	db	0x14," files converted in "
 	db	0x0a," archives."
 
+sub_12b70:
 	push	bp
 	mov	bp,sp
 	sub	sp,0x192
@@ -2866,7 +2867,7 @@ PROGRAM:
 	call	word 0x318:0x36d5
 	push	bp
 	mov	bp,sp
-	call	word 0x4710
+	call	word sub_12b70
 	mov	sp,bp
 	pop	bp
 	xor	ax,ax
