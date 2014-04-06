@@ -2950,8 +2950,8 @@ loc_13207:
 	jmp	word loc_132d1
 
 loc_1321e:
-	db	0x89,0x46
-	db	0xae,0xeb,0x03
+	mov	[bp-0x52],ax
+	jmp	short loc_13226
 
 loc_13223:
 	inc	word [bp-0x52]
