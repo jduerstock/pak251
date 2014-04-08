@@ -12891,7 +12891,7 @@ sub_1e780:
 	mov	[bp-0xa],ax
 	xor	ax,ax
 	cmp	ax,[bp-0xa]
-	db	0x77,0x34
+	ja	loc_1e7e3
 	mov	[bp-0x8],ax
 	db	0xeb,0x03
 	inc	word [bp-0x8]
