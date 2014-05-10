@@ -23,6 +23,10 @@
 	db 0x30,0xe4 ; xor ah,ah
 %endmacro
 
+%macro cmp_ax_cx 0
+	db 0x3b,0xc1 ; cmp ax,cx
+%endmacro
+
 %macro cmp_dx_bx 0
 	db 0x3b,0xd3 ; cmp dx,bx
 %endmacro
@@ -638,7 +642,8 @@ sub_1012d:
 	cmp_dx_bx
 	jl	loc_1016b
 	jg	loc_10167
-	db	0x3b,0xc1,0x72,0x04
+	cmp_ax_cx
+	jc	loc_1016b
 
 loc_10167:
 	mov	al,0x0
