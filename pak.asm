@@ -647,13 +647,15 @@ sub_1012d:
 
 loc_10167:
 	mov	al,0x0
-	db	0xeb,0x02
+	jmp	short loc_1016d
 
 loc_1016b:
 	mov	al,0x1
+
+loc_1016d:
 	mov	[bp-0x1],al
 	mov	al,[bp-0x1]
-	db	0x89,0xec
+	mov	sp, bp
 	pop	bp
 	retf	0x8
 
