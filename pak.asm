@@ -1061,7 +1061,7 @@ loc_103e1:
 	add_di	0x31
 	push	es
 	push	di
-	db	0xc4,0xbe,0x78,0xff
+	les	di,[bp-0x88]
 	add_di	0x31
 	push	es
 	push	di
