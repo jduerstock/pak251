@@ -15364,7 +15364,7 @@ loc_20c60:
 loc_20c6f:
 	les	bx,[bp+0x8]
 	mov	word [es:bx+0x20],0x6
-	db	0xe9,0xc0,0x02
+	jmp	word loc_20f3b
 
 loc_20c7b:
 	les	bx,[bp+0x18]
