@@ -43,9 +43,14 @@
 	db	0x3b,0xd3 ; cmp dx,bx
 %endmacro
 
+%macro cmp_ax 1
+	db	0x3d
+	dw	%1
+%endmacro
+
 %macro add_di 1
-	db 0x81,0xc7
-	dw %1
+	db	0x81,0xc7
+	dw	%1
 %endmacro
 
 %macro mov_ax_si 0
@@ -15197,7 +15202,7 @@ loc_20acd:
 	call	word sub_2033e
 	les	bx,[bp+0x8]
 	mov	ax,[es:bx+0x20]
-	db	0x3d,0x06,0x00 ; cmp	ax,0x6
+	cmp_ax	0x6
 	ja	loc_20b18
 	db	0x8b,0xd8
 	db	0xd1
