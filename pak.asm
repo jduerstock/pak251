@@ -15296,7 +15296,7 @@ loc_20bcb:
 	sub	si,[bp-0xc]
 	mov_ax_si
 	cmp	ax,[bp-0x8]
-	db	0x7e,0x22
+	jng	loc_20bfa
 	les	bx,[bp+0x18]
 	mov	al,[es:bx]
 	mov	cl,[bp-0xc]
@@ -15308,8 +15308,9 @@ loc_20bcb:
 	mov	[bp-0x1c],ax
 	mov	ax,[bp-0x8]
 	add	[bp-0xc],ax
-	db	0xe9,0x9a,0x00
+	jmp	word loc_20c94
 
+loc_20bfa:
 	les	bx,[bp+0x18]
 	mov	al,[es:bx]
 	mov	cl,[bp-0xc]
@@ -15365,6 +15366,8 @@ loc_20bcb:
 	mov	cl,[bp-0x8]
 	shl	ax,cl
 	or	[bp-0x1c],ax
+
+loc_20c94:
 	cmp	byte [bp-0x23],0x0
 	db	0x75,0x07
 	sub	word [bp-0x1c],0x100
