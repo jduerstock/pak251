@@ -15,20 +15,24 @@
 	push	di
 %endmacro
 
+%macro add_bx_si 0
+	db	0x03,0xde ; add bx,si
+%endmacro
+
 %macro add_di_ax 0
-	db 0x03,0xf8 ; add di,ax
+	db	0x03,0xf8 ; add di,ax
 %endmacro
 
 %macro xor_ah_ah 0
-	db 0x30,0xe4 ; xor ah,ah
+	db	0x30,0xe4 ; xor ah,ah
 %endmacro
 
 %macro cmp_ax_cx 0
-	db 0x3b,0xc1 ; cmp ax,cx
+	db	0x3b,0xc1 ; cmp ax,cx
 %endmacro
 
 %macro cmp_dx_bx 0
-	db 0x3b,0xd3 ; cmp dx,bx
+	db	0x3b,0xd3 ; cmp dx,bx
 %endmacro
 
 %macro add_di 1
@@ -14956,7 +14960,9 @@ uncrush:
 	mov	si,0x1f4
 	jmp	short loc_20a3f
 
-	db	0xc4,0x5e,0x06,0x03,0xde,0x26,0xc6,0x87,0x22,0x9b,0x00
+	les	bx,[bp+0x6]
+	add_bx_si
+	mov	byte [es:bx-0x64de],0x0
 
 loc_20a3f:
 	db	0x8b
