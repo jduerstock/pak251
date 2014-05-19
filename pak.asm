@@ -15289,7 +15289,7 @@ loc_20bb0:
 loc_20bbf:
 	les	bx,[bp+0x8]
 	mov	word [es:bx+0x20],0x2
-	db	0xe9,0x70,0x03
+	jmp	word loc_20f3b
 
 loc_20bcb:
 	mov	si,0x8
