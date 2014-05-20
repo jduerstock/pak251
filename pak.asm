@@ -15528,11 +15528,11 @@ loc_20cd7:
 	shl	ax,1
 	les	bx,[bp+0x8]
 	add_bx_ax
-	db	0x26,0x8b,0xb7,0x22,0x1f
+	mov	si,[es:bx+0x1f22]
 
 loc_20d07:
 	or_si_si
-	db	0x7f,0xcc
+	jg	loc_20cd7
 
 loc_20d0b:
 	mov_ax_si
