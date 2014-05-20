@@ -15629,6 +15629,8 @@ loc_20d0b:
 	add	bx,[bp-0x18]
 	mov	[es:bx+0x22],al
 	inc	word [bp-0x18]
+
+loc_20d20:
 	cmp	word [bp-0x12],byte +0x0
 	jz	loc_20d92
 	dec	word [bp-0x18]
@@ -15707,7 +15709,8 @@ loc_20dc2:
 	cmp	word [bp-0x18],byte +0x0
 	jz	loc_20dcf
 	or_di_di
-	db	0x74,0x03,0xe9,0x51,0xff
+	jz	loc_20dcf
+	jmp	word loc_20d20
 
 loc_20dcf:
 	db	0x83
