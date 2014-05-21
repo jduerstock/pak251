@@ -18071,6 +18071,7 @@ loc_23f1f:
 	pop	bp
 	retf	0x4
 
+sub_23f2a:
 	push	bp
 	mov	bp,sp
 	sub	sp,byte +0x8
@@ -18080,7 +18081,7 @@ loc_23f1f:
 	les	di,[bp+0xa]
 	push	es
 	push	di
-	call	word 0x149a:0x1511
+	call	word 0x149a:0x1511 ; filepos()
 	mov	[bp-0x4],ax
 	mov	[bp-0x2],dx
 	les	di,[bp-0x8]
