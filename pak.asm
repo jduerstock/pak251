@@ -653,16 +653,8 @@ loc_10062:
 
 loc_1008a:
 	pushstackvarptr 0x206
-;	lea	di,[bp-0x206]
-;	push	ss
-;	push	di
-	lea	di,[bp-0x106]
-	push	ss
-	push	di
-	les	di,[bp+0xa]
-	add_di	0x01
-	push	es
-	push	di
+	pushstackvarptr 0x106
+	pushparamoff 0xa,1
 	mov	ax,[bp-0x4]
 	inc	ax
 	push	ax
