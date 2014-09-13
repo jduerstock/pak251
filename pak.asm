@@ -618,10 +618,11 @@ sub_10033:
 	mov	di,0x31
 	push	cs
 	push	di
-	les	di,[bp+0xa]
-	add_di	0x01
-	push	es
-	push	di
+	pushparamoff 0x0a,1
+;	les	di,[bp+0xa]
+;	add_di	0x01
+;	push	es
+;	push	di
 	call	word 0x149a:0x6e3 ; pos
 	mov	[bp-0x4],ax
 	cmp	word [bp-0x4],byte +0x0
