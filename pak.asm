@@ -691,15 +691,10 @@ loc_1008a:
 	sub	ax,[bp-0x6]
 	push	ax
 	call	word 0x149a:0x676
-	mov	al,0x20
-	push	ax
-	mov	al,0x3
-	push	ax
+	pushb	0x20
+	pushb	0x3
 	call	word 0x1362:0xc4
-	les	di,[bp+0x6]
-	add_di	0x01
-	push	es
-	push	di
+	pushparamoff 0x6,1
 	call	word 0x149a:0x6b7 ; concat
 	call	word 0x149a:0x72f ; strcmp
 	jc	loc_1011f
