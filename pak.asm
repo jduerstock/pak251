@@ -15,6 +15,12 @@
 	push	di
 %endmacro
 
+%macro	pushstackvarptr 1
+	lea	di,[bp-%1]
+	push	ss
+	push	di
+%endmacro
+
 %macro add_bx_ax 0
 	db	0x03,0xd8 ; add bx,ax
 %endmacro
@@ -646,9 +652,10 @@ loc_10062:
 	mov	[bp-0x6],ax
 
 loc_1008a:
-	lea	di,[bp-0x206]
-	push	ss
-	push	di
+	pushstackvarptr 0x206
+;	lea	di,[bp-0x206]
+;	push	ss
+;	push	di
 	lea	di,[bp-0x106]
 	push	ss
 	push	di
