@@ -674,16 +674,9 @@ loc_1008a:
 	push	es
 	push	di
 	call	word 0x149a:0x6b7
-	lea	di,[bp-0x406]
-	push	ss
-	push	di
-	lea	di,[bp-0x306]
-	push	ss
-	push	di
-	les	di,[bp+0x6]
-	add_di	0x01
-	push	es
-	push	di
+	pushstackvarptr 0x0406
+	pushstackvarptr 0x0306
+	pushparamoff 0x6,1
 	mov	ax,[bp-0x6]
 	inc	ax
 	push	ax
