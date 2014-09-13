@@ -794,11 +794,8 @@ loc_1019f:
 	les	di,[bp+0xe]
 	push	es
 	push	di
-	lea	di,[bp-0x100]
-	push	ss
-	push	di
-	mov	ax,0xff
-	push	ax
+	pushvarptr 0x100
+	pushw	0xff
 	call	word 0x149a:0x644
 	les	di,[bp+0xa]
 	push	word [es:di+0x2]
