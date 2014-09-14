@@ -3580,11 +3580,8 @@ sub_1319c:
 	mov	bp, sp
 	sub	sp, 0x01ea
 	pushparam 0x14
-	lea	di, [bp-0x50]
-	push	ss
-	push	di
-	mov	ax, 0x4f
-	push	ax
+	pushvarptr 0x50
+	pushw	0x4f
 	call	word 0x149a:0x644 ; call @$basg$qm6Stringt14Byte
 	cmp	[bp+8], byte 0
 	jz	loc_131fe
