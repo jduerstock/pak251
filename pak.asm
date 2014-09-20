@@ -4206,8 +4206,7 @@ sub_1385f:
 	mov	di,0x691
 	push	cs
 	push	di
-	xor	ax,ax
-	push	ax
+	pushw	0
 	call	word 0x149a:0x1281
 	call	word 0x149a:0x11b9
 	les	di,[bp+0x8]
@@ -4227,9 +4226,7 @@ sub_1385f:
 	call	word 0x1383:0x7cc
 	push	dx
 	push	ax
-	lea	di,[bp-0x2e]
-	push	ss
-	push	di
+	pushvarptr 0x2e
 	call	word 0x896:0x2dd2
 	mov	ax,[bp-0x10]
 	cmp	ax,[bp-0x26]
