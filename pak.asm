@@ -4197,11 +4197,8 @@ sub_1385f:
 	les	di,[bp+0x4]
 	push	es
 	push	di
-	lea	di,[bp-0x18]
-	push	ss
-	push	di
-	mov	ax,0x16
-	push	ax
+	pushvarptr 0x18
+	pushw	0x16
 	call	word 0x149a:0x25d
 	mov	di,0x21ae
 	push	ds
