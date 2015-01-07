@@ -4338,7 +4338,7 @@ loc_138f8:
 	mov	byte [bp-0x2f],0x0
 	mov	ax,[bp-0x34]
 	cmp	ax,[bp-0x36]
-	db	0x74,0x03
+	jz	loc_139d7
 	jmp	word loc_138f5
 
 loc_139d7:
